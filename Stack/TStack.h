@@ -34,7 +34,7 @@ public:
 	//оператор присваивания
 	TStack& operator=(const TStack<T>& tstack)
 	{
-		if (*this != tstack)
+		if (pMem != tstack.pMem)
 		{
 			MaxSize = tstack.MaxSize;
 			CurrIndx = tstack.CurrIndx;
@@ -48,11 +48,12 @@ public:
 		return *this;
 	}
 
+
 	
 	//для отладки необходимо создать метод вывода стека на экран(как угодно)
 	friend ostream& operator<<(ostream& out, const TStack <T> & mt)
 	{
-		for (int i = 0; i <= MaxSize; i++)
+		for (int i = 0; i < mt.MaxSize; i++)
 			out << mt.pMem[i] << endl;
 		return out;
 	}
@@ -104,6 +105,11 @@ public:
 	void clear()
 	{
 		CurrIndx = -1;
+		while (!(empty()))
+		{
+			this->pop();
+
+		}
 	}
 	/*метод очистки стека в мейне
 	TStack<int> s;
@@ -111,6 +117,4 @@ public:
 	{s.Pop();//выталкиваем
 	}
 	*/
-
-
 };

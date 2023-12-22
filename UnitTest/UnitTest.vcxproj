@@ -33,12 +33,15 @@
   <ImportGroup Label="PropertySheets" />
   <PropertyGroup Label="UserMacros" />
   <ItemGroup>
+    <ClInclude Include="..\Stack\TCalc.h" />
     <ClInclude Include="..\Stack\TStack.h" />
     <ClInclude Include="pch.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\Stack\TCalc.cpp" />
     <ClCompile Include="..\Stack\TStack.cpp" />
-    <ClCompile Include="test.cpp" />
+    <ClCompile Include="TCalc_test.cpp" />
+    <ClCompile Include="TStack_test.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
